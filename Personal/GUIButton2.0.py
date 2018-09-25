@@ -23,4 +23,3 @@ btn1.pack()
 btn2.pack()
 
 root.mainloop()
-
