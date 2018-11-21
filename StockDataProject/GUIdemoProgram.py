@@ -1,6 +1,6 @@
 #This imports the tkinter "tool box" this contains
 #all of the support material to make GUI elements
-#by including "as tk" we rae giving a short name to use.
+#by including "as tk" we are giving a short name to use.
 import tkinter as tk
 
 
