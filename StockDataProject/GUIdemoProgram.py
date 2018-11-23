@@ -37,10 +37,10 @@ var2 = Intvar()
 #checkbox. If there is a change in the box, there is a change in the variable.
 #This is called BINDING
 
-c = Checkbutton(root, text="Expand", variable=var)
+c = Checkbutton(root, text="Expand", variable=var1)
 cHC.grid(row = 0, column = 1)
 
-c = Checkbutton(root, text="Expand", variable=var)
+c = Checkbutton(root, text="Expand", variable=var2)
 cHC.grid(row = 1, column = 1)
 
 #This is an event driven program
