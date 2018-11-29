@@ -1,9 +1,26 @@
 import tkinter as tk
 
+
+
+def submitClicked():
+	print("Submit Clicked")
+	tempn = nameEntry.get() #Access value in tempn
+	print(tempn) #prints to screen
+	names.append(tempn) #add it to list
+	print(names)
+	tempn = valueEntry.get()
+	print(tempn)
+	value.append(tempn)
+	tempn = quantityEntry.get()
+	print(tempn)
+	number.append(tempn)
+
+
+
 #Group Data Variables here!
-names = ["Stock 1","Stock 2","Stock 3","Stock 4"] #Names entered 
-number = [3,1,5,4,5,6] #NUMBER OWNED 
-value = [6,5,4,3,2,1] #VALUE AT TIME OF PURCHASE
+names = [] #Names entered 
+number = [] #NUMBER OWNED 
+value = [] #VALUE AT TIME OF PURCHASE
 
 '''
 READING THE TABLE
@@ -48,8 +65,11 @@ quantityLabel.grid(row = 4, column = 0)
 quantityEntry = tk.Entry(root)
 quantityEntry.grid(row = 4,column = 1)
 
-submitButton = tk.Button(root, text = "SUBMIT")
+submitButton = tk.Button(root, text = "Submit", command = submitClicked)
 submitButton.grid(row = 5, column = 0, columnspan = 3, sticky = "NESW")
+
+removeButton = tk.Button(root, text = "Remove")
+removeButton.grid(row = 6, column = 0, columnspan = 3, sticky = "NESW")
 
 
 
