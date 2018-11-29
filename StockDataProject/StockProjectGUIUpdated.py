@@ -22,7 +22,7 @@ Total value = number[0] * value[0]
 root = tk.Tk()
 
 
-titleLabel = tk.Label(root, text = "STOCK MANAGER")
+titleLabel = tk.Label(root, text = "Stock Manager")
 titleLabel.grid(row = 0, column = 0, columnspan = 3)
 
 #Output box is where we will display the stock information
@@ -35,5 +35,22 @@ nameLabel.grid(row = 2, column = 0)
 
 nameEntry = tk.Entry(root)
 nameEntry.grid(row = 2,column = 1)
+
+valueLabel = tk.Label(root, text = "Value")
+valueLabel.grid(row = 3, column = 0)
+
+valueEntry = tk.Entry(root)
+valueEntry.grid(row = 3,column = 1)
+
+quantityLabel = tk.Label(root, text = "Quantity")
+quantityLabel.grid(row = 4, column = 0)
+
+quantityEntry = tk.Entry(root)
+quantityEntry.grid(row = 4,column = 1)
+
+submitButton = tk.Button(root, text = "SUBMIT")
+submitButton.grid(row = 5, column = 0, columnspan = 3, sticky = "NESW")
+
+
 
 root.mainloop()
