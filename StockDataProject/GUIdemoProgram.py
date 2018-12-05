@@ -33,6 +33,7 @@ labInput3.grid(row = 7, column = 0)
 var1 = IntVar()
 var2 = Intvar()
 
+
 #What the named parameter variable does is binds the IntVar to the
 #checkbox. If there is a change in the box, there is a change in the variable.
 #This is called BINDING

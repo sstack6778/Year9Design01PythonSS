@@ -1,13 +1,18 @@
 import tkinter as tk
 
 
+#**************Values
+stockList = ["GOOGL","AAPL","FB"]
+
+
+
 root = tk.Tk()
 
 #1. Construct object
 #2. Configure the object
 #3. Pack the object (put it in window)
 
-output = tk.Text(root,height = 30, width = 50)
+output = tk.Text(root,height = 10, width = 50)
 
 #Ordered parameters: the order of the parameters is important
 #Named parameters: Unique to JavaScript and Python

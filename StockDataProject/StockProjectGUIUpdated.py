@@ -5,17 +5,38 @@ import tkinter as tk
 def submitClicked():
 	print("Submit Clicked")
 	tempn = nameEntry.get() #Access value in tempn
-	print(tempn) #prints to screen
+	#print(tempn) #prints to screen
 	names.append(tempn) #add it to list
-	print(names)
+	#print(names)
 	tempn = valueEntry.get()
-	print(tempn)
+	#print(tempn)
 	value.append(tempn)
 	tempn = quantityEntry.get()
-	print(tempn)
+	#print(tempn)
 	number.append(tempn)
 
+	#LOOP THROUGH NUMBER TO ACCESS EACH ELEMENT
+	#EXAMPLE
+	#	number = [2,4,5]
+	#	value = [4,3,6]
+	#
+	# totalValue = 2 * 4 + 4 * 3 + 5 * 6
+	# totalValue = number[0]*value[0]+number[1]*value[1]+number[2]*value[2]
+	#What I observe is that we are sequentially moving through the list 0,1,2
+	#Question: How do I do this regardless of list size
+	#Answer: use a loop
+	total = 0
+	for i in range(0,len(number),1):
+		total = total + number[i] * value[i]
 
+	#Simple trace
+	# total = 0
+	# i = 0, 0 < 3, True
+	# total = 0 + number[0]*value[0] = 0 + 2 * 4 = 8
+	# i = 1, 1 < 3 True
+	# total = 8 + number[1]*value[1] = 8 + 4 * 3 = 20
+	# i = 2, 2 < 3 True
+	# total = 20 + number[2]*value[2] =  20 + 5 * 6 = 20 + 30 = 50
 
 #Group Data Variables here!
 names = [] #Names entered 
@@ -70,6 +91,14 @@ submitButton.grid(row = 5, column = 0, columnspan = 3, sticky = "NESW")
 
 removeButton = tk.Button(root, text = "Remove")
 removeButton.grid(row = 6, column = 0, columnspan = 3, sticky = "NESW")
+
+#portfolioLabel = tk.Label(root, text = "Portfolio Value")
+#portfolioLabel.grid(row = 1, column = 0, columnspan = 3, sticky = "NESW")
+#This is a label that I removed. I removed it because
+
+
+
+
 
 
 
