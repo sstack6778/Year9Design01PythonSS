@@ -26,8 +26,8 @@ def submitClicked():
 	#Question: How do I do this regardless of list size
 	#Answer: use a loop
 	total = 0
-	for i in range(0,len(number),1):
-		total = total + number[i] * value[i]
+	for i in range(0,len(number),1):	
+		total = total + int(number[i]) * int(value[i])
 
 	#Simple trace
 	# total = 0
@@ -37,11 +37,15 @@ def submitClicked():
 	# total = 8 + number[1]*value[1] = 8 + 4 * 3 = 20
 	# i = 2, 2 < 3 True
 	# total = 20 + number[2]*value[2] =  20 + 5 * 6 = 20 + 30 = 50
+	print(total)
+	output.delete("1.0", tk.END)
+	output.insert(tk.END,"Total portfolio value = "+str(total) + " CAD")
 
 #Group Data Variables here!
 names = [] #Names entered 
 number = [] #NUMBER OWNED 
 value = [] #VALUE AT TIME OF PURCHASE
+
 
 '''
 READING THE TABLE
