@@ -11,13 +11,13 @@ def submitClicked():
 		#print(tempn) #prints to screen
 		#print(names)
 
-		names.append(tempa) #add it to list
 		tempb = float(valueEntry.get())
 		#print(tempn)
 		tempc = float(quantityEntry.get())
 		#print(tempn)
 		value.append(tempb)
 
+		names.append(tempa) #add it to list
 		number.append(tempc)
 	except:
 		valueEntry.delete(0,tk.END)
@@ -52,6 +52,28 @@ def submitClicked():
 	print(total)
 	output.delete("1.0", tk.END)
 	output.insert(tk.END,"Total portfolio value = "+str(total) + " CAD")
+
+def remove(*args):
+
+	print("remove")
+	#Code for the situation where there is a name but no other information
+	n = nameEntry.get()
+
+	if nameEntry.get() != "" and valueEntry.get() == "" and quantityEntry.get() == "":
+		print("remove based on name")
+		#Loop through names and find all cases where names[i] == n
+		#when I find it I will remove the element
+		#Loop backwards
+		for i in range(len(names) - 1, -1, -1):
+			if names[i] == n:
+				names.pop(i)
+				number.pop(i)
+				value.pop(i)
+
+			
+	print(names)
+	print(number)
+	print(value)
 
 #Group Data Variables here!
 names = [] #Names entered 
@@ -105,7 +127,7 @@ quantityEntry.grid(row = 4,column = 1)
 submitButton = tk.Button(root, text = "Submit", command = submitClicked)
 submitButton.grid(row = 5, column = 0, columnspan = 3, sticky = "NESW")
 
-removeButton = tk.Button(root, text = "Remove")
+removeButton = tk.Button(root, text = "Remove", command = remove)
 removeButton.grid(row = 6, column = 0, columnspan = 3, sticky = "NESW")
 
 #portfolioLabel = tk.Label(root, text = "Portfolio Value")
