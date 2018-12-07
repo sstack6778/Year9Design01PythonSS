@@ -4,17 +4,29 @@ import tkinter as tk
 
 def submitClicked():
 	print("Submit Clicked")
-	tempn = nameEntry.get() #Access value in tempn
-	#print(tempn) #prints to screen
-	names.append(tempn) #add it to list
-	#print(names)
-	tempn = valueEntry.get()
-	#print(tempn)
-	value.append(tempn)
-	tempn = quantityEntry.get()
-	#print(tempn)
-	number.append(tempn)
+	
+	try: #in try statement as soon something goes wrong we STOP and jump to except
+		#if anything in here goes wrong go to the except section
+		tempa = nameEntry.get() #Access value in tempn
+		#print(tempn) #prints to screen
+		#print(names)
 
+		names.append(tempa) #add it to list
+		tempb = float(valueEntry.get())
+		#print(tempn)
+		tempc = float(quantityEntry.get())
+		#print(tempn)
+		value.append(tempb)
+
+		number.append(tempc)
+	except:
+		valueEntry.delete(0,tk.END)
+		quantityEntry.delete(0,tk.END)
+		print("dude, I said a float!")
+	
+	print(names)
+	print(number)
+	print(value)	
 	#LOOP THROUGH NUMBER TO ACCESS EACH ELEMENT
 	#EXAMPLE
 	#	number = [2,4,5]
@@ -27,7 +39,7 @@ def submitClicked():
 	#Answer: use a loop
 	total = 0
 	for i in range(0,len(number),1):	
-		total = total + int(number[i]) * int(value[i])
+		total = total + float(number[i]) * float(value[i])
 
 	#Simple trace
 	# total = 0
