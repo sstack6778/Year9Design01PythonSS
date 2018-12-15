@@ -22,7 +22,7 @@ def submitClicked():
 	except:
 		valueEntry.delete(0,tk.END)
 		quantityEntry.delete(0,tk.END)
-		print("dude, I said a float!")
+		print("Error")
 	
 	print(names)
 	print(number)
@@ -37,6 +37,10 @@ def submitClicked():
 	#What I observe is that we are sequentially moving through the list 0,1,2
 	#Question: How do I do this regardless of list size
 	#Answer: use a loop
+	calcValue() #This calls calcValue function
+
+
+def calcValue():
 	total = 0
 	for i in range(0,len(number),1):	
 		total = total + float(number[i]) * float(value[i])
@@ -52,7 +56,7 @@ def submitClicked():
 	print(total)
 	output.delete("1.0", tk.END)
 	output.insert(tk.END,"Total portfolio value = "+str(total) + " CAD")
-
+	
 def remove(*args):
 
 	print("remove")
@@ -70,7 +74,8 @@ def remove(*args):
 				number.pop(i)
 				value.pop(i)
 
-			
+	calcValue()
+
 	print(names)
 	print(number)
 	print(value)
